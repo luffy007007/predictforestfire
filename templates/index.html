@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forest Fire Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding-top: 100px;
+        }
+        h1 {
+            color: #ff4500;
+            font-size: 48px;
+        }
+        p {
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Forest Fire Prediction</h1>
+    <p>This is my first ml work!</p>
+    <p>Click below to enter the prediction page:</p>
+    
+    <form action="{{ url_for('predict_data') }}">
+        <button type="submit">Go to Prediction Form</button>
+    </form>
+</body>
+</html>

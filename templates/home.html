@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forest Fire Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align:center; padding:50px; background:#f0f8ff;}
+        h1 { color: #ff4500; }
+        input { padding: 5px; margin: 5px; width: 120px; }
+        button { padding: 10px 20px; background:#ff4500; color:white; border:none; cursor:pointer; }
+        button:hover { background:#ff6347; }
+        form { display:inline-block; text-align:left; }
+    </style>
+</head>
+<body>
+    <h1>Forest Fire Prediction Form</h1>
+    <form action="{{ url_for('predict_data') }}" method="post">
+        <label>Temperature:</label>
+        <input type="number" step="any" name="Temperature" required><br>
+
+        <label>RH:</label>
+        <input type="number" step="any" name="RH" required><br>
+
+        <label>Ws:</label>
+        <input type="number" step="any" name="Ws" required><br>
+
+        <label>Rain:</label>
+        <input type="number" step="any" name="Rain" required><br>
+
+        <label>FFMC:</label>
+        <input type="number" step="any" name="FFMC" required><br>
+
+        <label>DMC:</label>
+        <input type="number" step="any" name="DMC" required><br>
+
+        <label>ISI:</label>
+        <input type="number" step="any" name="ISI" required><br>
+
+        <label>Classes:</label>
+        <input type="number" step="any" name="Classes" required><br>
+
+        <label>Region:</label>
+        <input type="number" step="any" name="Region" required><br>
+
+        <button type="submit">Predict FWI</button>
+    </form>
+
+    {% if results %}
+    <h2>THE FWI (FIRE WEATHER INDEX) IS: {{ results }}</h2>
+    {% endif %}
+</body>
+</html>
